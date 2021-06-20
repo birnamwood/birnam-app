@@ -8,7 +8,7 @@ import Header from './components/Header'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router basename={process.env.REACT_APP_PUBLIC_URL}>
     <Header />
       <Switch>
         {routes.map((config, i) => (
