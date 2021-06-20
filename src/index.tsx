@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import routes from './routes/routes';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import './styles/index.module.scss';
+import reportWebVitals from './tools/reportWebVitals';
+import Header from './components/Header'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+    <Header />
+      <Switch>
+        {routes.map((config, i) => (
+            <Route key={i} {...config} />
+        ))}
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
