@@ -3,12 +3,12 @@ import helloAPI from "../lib/api/helloAPI";
 
 function Hello() {
 	const get = async () => {
-    let result = await helloAPI.get()
+    let result = await helloAPI.getLog(null)
 		console.log(result);
   };
 	return (
 	  <div className="Hello">
-			      <input
+			<input
         type="button"
         className={styles.HelloButton}
         value="Read"

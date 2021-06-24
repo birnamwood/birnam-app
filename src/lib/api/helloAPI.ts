@@ -1,13 +1,10 @@
-import API from './baseAPI'
-import { AxiosResponse } from 'axios'
+import apiCall from './baseAPI'
 
+const getLog = apiCall<null , any>("/api/test");
 
 const helloAPI = {
-  get,
+  getLog,
 };
-export default helloAPI;
 
-async function get():Promise<any> {
-  let res: AxiosResponse<any>  = await API.post("/api/test");
-  return res.data;
-}
+
+export default helloAPI;
